@@ -4,6 +4,7 @@ import 'app.dart';
 
 /**
  * 1) Settings with multi languages
+ * 2) Themes
  */
 
 void main() {

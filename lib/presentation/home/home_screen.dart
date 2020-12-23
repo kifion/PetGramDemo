@@ -1,29 +1,20 @@
-import 'package:petgram/domain/api_service.dart';
 import 'package:chopper/chopper.dart';
 import 'package:flutter/material.dart';
+import 'package:petgram/domain/api_service.dart';
 import 'package:petgram/domain/model/network/bread_list_response.dart';
-import 'package:petgram/presentation/settings_screen.dart';
+import 'package:petgram/localization/app_localization.dart';
+import 'package:petgram/presentation/home/widget_settings_button.dart';
 import 'package:provider/provider.dart';
 
-import 'detail_screen.dart';
+import '../detail_screen.dart';
 
-class StartScreen extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AnimalGram'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.settings,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              _navigateToSettings(context);
-            },
-          )
-        ],
+        title: Text(AppLocalizations.of(context).translate('title')),
+        actions: [SettingsButtonWidget()],
       ),
       body: _buildBody(context),
     );
@@ -49,14 +40,6 @@ class StartScreen extends StatelessWidget {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => DetailScreen(),
-      ),
-    );
-  }
-
-  void _navigateToSettings(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => SettingsScreen(),
       ),
     );
   }
