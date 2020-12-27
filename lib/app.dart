@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:petgram/app_theme.dart';
 import 'package:petgram/localization/app_localization.dart';
 import 'package:petgram/localization/support_languages.dart';
 import 'package:petgram/presentation/home/home_screen.dart';
@@ -41,10 +42,7 @@ class _PetGramAppState extends State<PetGramApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: AppTheme().theme,
       home: MultiProvider(
         providers: [
           Provider<ApiService>(

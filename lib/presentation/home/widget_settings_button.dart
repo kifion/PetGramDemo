@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../settings_screen.dart';
+import '../settings/settings_screen.dart';
 
 class SettingsButtonWidget extends StatelessWidget {
   void _navigateToSettings(BuildContext context) {

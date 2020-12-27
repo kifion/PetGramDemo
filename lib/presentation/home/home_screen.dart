@@ -6,7 +6,7 @@ import 'package:petgram/localization/app_localization.dart';
 import 'package:petgram/presentation/home/widget_settings_button.dart';
 import 'package:provider/provider.dart';
 
-import '../detail_screen.dart';
+import '../detail/detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
