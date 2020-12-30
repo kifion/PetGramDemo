@@ -30,7 +30,6 @@ dependencies:
   provider: ^4.3.2+2
   chopper: ^2.0.0
   moor_flutter: ^3.1.0
-  fimber: ^0.4.4
   json_serializable: ^3.5.1
 
   # The following adds the Cupertino Icons font to your application.

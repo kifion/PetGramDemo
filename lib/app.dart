@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:petgram/app_theme.dart';
 import 'package:petgram/localization/app_localization.dart';
 import 'package:petgram/localization/support_languages.dart';
-import 'package:petgram/presentation/home/home_screen.dart';
+import 'package:petgram/presentation/start/start_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'domain/api_service.dart';
@@ -50,7 +50,7 @@ class _PetGramAppState extends State<PetGramApp> {
             dispose: (context, ApiService service) => service.client.dispose(),
           ),
         ],
-        child: HomeScreen(),
+        child: StartScreen(),
       ),
       locale: _locale,
       supportedLocales: [

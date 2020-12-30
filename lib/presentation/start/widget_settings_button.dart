@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../settings/settings_screen.dart';
-
 class SettingsButtonWidget extends StatelessWidget {
   void _navigateToSettings(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => SettingsScreen(),
-      ),
-    );
+    _showInSnackBar(context, "The button of settings was clicked");
   }
 
   @override
@@ -21,6 +15,14 @@ class SettingsButtonWidget extends StatelessWidget {
       onPressed: () {
         _navigateToSettings(context);
       },
+    );
+  }
+
+  _showInSnackBar(BuildContext context, String text) {
+    Scaffold.of(context).showSnackBar(
+      SnackBar(
+        content: Text(text),
+      ),
     );
   }
 }
