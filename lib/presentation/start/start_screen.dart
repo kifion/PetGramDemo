@@ -33,7 +33,9 @@ class _StartScreenState extends State<StartScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).translate('title')),
-        actions: [SettingsButtonWidget()],
+        actions: [
+          SettingsButtonWidget()
+        ],
       ),
       body: IndexedStack(
         index: _selectedScreenList,
