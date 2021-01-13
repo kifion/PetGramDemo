@@ -1,5 +1,6 @@
 {
   "title": "PetGram",
   "titleSettings": "Settings",
-  "changeLanguage": "Change Language"
+  "changeLanguage": "Change Language",
+  "buttonSearchClicked": "The button of search was clicked"
 }

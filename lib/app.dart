@@ -40,38 +40,38 @@ class _PetGramAppState extends State<PetGramApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme().theme,
-      home: MultiProvider(
-        providers: [
-          Provider<ApiService>(
-            create: (_) => ApiService.create(),
-            dispose: (context, ApiService service) => service.client.dispose(),
-          ),
+    return MultiProvider(
+      providers: [
+        Provider<ApiService>(
+          create: (_) => ApiService.create(),
+          dispose: (context, ApiService service) => service.client.dispose(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme().theme,
+        home: StartScreen(),
+        locale: _locale,
+        supportedLocales: [
+          Locale(SupportLanguages.English, ''),
+          Locale(SupportLanguages.Russian, ''),
         ],
-        child: StartScreen(),
-      ),
-      locale: _locale,
-      supportedLocales: [
-        Locale(SupportLanguages.English, ''),
-        Locale(SupportLanguages.Russian, ''),
-      ],
-      localizationsDelegates: [
-        AppLocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      localeResolutionCallback: (locale, supportedLocales) {
-        for (var supportedLocale in supportedLocales) {
-          if (supportedLocale?.languageCode == locale?.languageCode &&
-              supportedLocale?.countryCode == locale?.countryCode) {
-            return supportedLocale;
+        localizationsDelegates: [
+          AppLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        localeResolutionCallback: (locale, supportedLocales) {
+          for (var supportedLocale in supportedLocales) {
+            if (supportedLocale?.languageCode == locale?.languageCode &&
+                supportedLocale?.countryCode == locale?.countryCode) {
+              return supportedLocale;
+            }
           }
-        }
-        return supportedLocales?.first;
-      },
+          return supportedLocales?.first;
+        },
+      ),
     );
   }
 }

@@ -3,7 +3,6 @@ import 'package:petgram/localization/app_localization.dart';
 import 'package:petgram/presentation/home/home_screen.dart';
 import 'package:petgram/presentation/settings/settings_screen.dart';
 
-import '../detail/detail_screen.dart';
 import 'widget_settings_button.dart';
 
 class StartScreen extends StatefulWidget {
@@ -56,14 +55,6 @@ class _StartScreenState extends State<StartScreen> {
         currentIndex: _selectedScreenList,
         selectedItemColor: Colors.blue,
         onTap: _onItemTapped,
-      ),
-    );
-  }
-
-  void _navigateToDetail(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => DetailScreen(),
       ),
     );
   }

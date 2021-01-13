@@ -1,6 +1,7 @@
 import 'package:chopper/chopper.dart';
 
 import 'converter/json_to_type_converter.dart';
+import 'model/network/breed_images.dart';
 import 'model/network/breed_list_response.dart';
 import 'model/network/breed_random.dart';
 
@@ -15,44 +16,22 @@ abstract class ApiService extends ChopperService {
   Future<Response<BreedRandomResponse>> getRandomByBreed(
       @Path('breed') String breed);
 
+  @Get(path: '/breed/{breed}/images')
+  Future<Response<BreedImagesResponse>> getImageListByBreed(
+      @Path('breed') String breed);
+
   static ApiService create() {
     final client = ChopperClient(
         baseUrl: 'https://dog.ceo',
         services: [_$ApiService()],
         converter: JsonToTypeConverter({
           BreedListResponse: (jsonData) => BreedListResponse.fromJson(jsonData),
-          BreedRandomResponse: (jsonData) =>
-              BreedRandomResponse.fromJson(jsonData)
+          BreedRandomResponse: (jsonData) => BreedRandomResponse.fromJson(jsonData),
+          BreedImagesResponse: (jsonData) => BreedImagesResponse.fromJson(jsonData),
         }),
         interceptors: [
           HeadersInterceptor({'Cache-Control': 'no-cache'}),
           HttpLoggingInterceptor(),
-          (Request request) async {
-            print("""
-                =========HTTP Request logging=========
-                baseUrl: ${request.baseUrl}
-                url: ${request.url}
-                parameter: ${request.parameters}
-                method: ${request.method}
-                headers: ${request.headers}
-                body: ${request.body}
-                multipart: ${request.multipart}
-                parts: ${request.parts}
-                ======================================
-              """);
-            return request;
-          },
-          (Response response) async {
-            print("""
-                =========HTTP Response logging=========
-                url: ${response.base.request.url}
-                status: ${response.statusCode}
-                headers: ${response.headers}
-                body: ${response.body}
-                ======================================
-              """);
-            return response;
-          },
         ]);
     return _$ApiService(client);
   }

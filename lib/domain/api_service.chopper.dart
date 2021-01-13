@@ -25,4 +25,10 @@ class _$ApiService extends ApiService {
     final $request = Request('GET', $url, client.baseUrl);
     return client.send<BreedRandomResponse, BreedRandomResponse>($request);
   }
+
+  Future<Response<BreedImagesResponse>> getImageListByBreed(String breed) {
+    final $url = '/api/breed/${breed}/images';
+    final $request = Request('GET', $url, client.baseUrl);
+    return client.send<BreedImagesResponse, BreedImagesResponse>($request);
+  }
 }

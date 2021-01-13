@@ -1,5 +1,6 @@
 {
   "title": "PetGram",
   "titleSettings": "Настройки",
-  "changeLanguage": "Сменить язык"
+  "changeLanguage": "Сменить язык",
+  "buttonSearchClicked": "Нажата кнопка поиска"
 }
