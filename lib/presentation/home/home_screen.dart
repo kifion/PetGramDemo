@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           final response = snapshot.data.body;
-          return BreedListWidget(response.message.list.getRange(1,10).toList());
+          return BreedListWidget(response.message.list.getRange(1,6).toList());
         } else {
           return Center(
             child: CircularProgressIndicator(),
