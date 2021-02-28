@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:petgram/app_theme.dart';
+import 'package:petgram/data/network/api_service.dart';
 import 'package:petgram/localization/app_localization.dart';
 import 'package:petgram/localization/support_languages.dart';
 import 'package:petgram/presentation/start/start_screen.dart';
 import 'package:provider/provider.dart';
 
-import 'domain/api_service.dart';
 import 'localization/local_constant.dart';
 
 class PetGramApp extends StatefulWidget {

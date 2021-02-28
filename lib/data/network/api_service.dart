@@ -1,9 +1,9 @@
 import 'package:chopper/chopper.dart';
+import 'package:petgram/data/network/converter/json_to_type_converter.dart';
+import 'package:petgram/data/network/model/breed_images.dart';
+import 'package:petgram/data/network/model/breed_list_response.dart';
+import 'package:petgram/data/network/model/breed_random.dart';
 
-import 'converter/json_to_type_converter.dart';
-import 'model/network/breed_images.dart';
-import 'model/network/breed_list_response.dart';
-import 'model/network/breed_random.dart';
 
 part 'api_service.chopper.dart';
 

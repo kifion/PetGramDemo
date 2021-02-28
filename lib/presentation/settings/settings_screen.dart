@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petgram/domain/model/language_data.dart';
+import 'package:petgram/data/model/language_data.dart';
 import 'package:petgram/localization/app_localization.dart';
 import 'package:petgram/localization/local_constant.dart';
 

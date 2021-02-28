@@ -1,9 +1,9 @@
 import 'package:chopper/chopper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:petgram/domain/api_service.dart';
-import 'package:petgram/domain/model/network/breed_images.dart';
-import 'package:petgram/domain/model/network/breed_list_response.dart';
+import 'package:petgram/data/network/api_service.dart';
+import 'package:petgram/data/network/model/breed_images.dart';
+import 'package:petgram/data/network/model/breed_list_response.dart';
 import 'package:petgram/extensions.dart';
 import 'package:petgram/presentation/preview/preview_screen.dart';
 import 'package:provider/provider.dart';
